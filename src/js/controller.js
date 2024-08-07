@@ -112,7 +112,8 @@ const controlAddRecipe = async function (newRecipe) {
 
     setTimeout(() => location.reload(), RELOAD_PAGE_TIMER * 1000);
   } catch (error) {
-    addRecipeView.renderError(error.message);
+    addRecipeView.renderError(`${error.message} Page will now reload!`);
+    setTimeout(() => location.reload(), RELOAD_PAGE_TIMER * 1000);
   }
 };
 
